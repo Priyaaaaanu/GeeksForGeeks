@@ -1,0 +1,39 @@
+class Solution {
+    public static void convertToWave(int n, int[] a) {
+        // code here
+        int p1 = 0;
+        int p2 = 1;
+        if(n%2==1){
+            while(p2<n-1){
+                int temp = a[p1];
+                a[p1]=a[p2];
+                a[p2]=temp;
+                p1=p1+2;
+                p2=p2+2;
+            }
+        }else{
+            while(p2<n){
+                int temp = a[p1];
+                a[p1]=a[p2];
+                a[p2]=temp;
+                p1=p1+2;
+                p2=p2+2;
+            }
+        }
+    }
+}
+
+
+
+Also:
+
+class Solution {
+    public static void convertToWave(int n, int[] a) {
+        // Swap adjacent elements starting from the second element
+        for (int i = 1; i < n; i += 2) {
+            int temp = a[i - 1];
+            a[i - 1] = a[i];
+            a[i] = temp;
+        }
+    }
+        
